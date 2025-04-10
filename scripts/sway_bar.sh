@@ -45,17 +45,17 @@ mem_used=$(free | awk '/Mem:/ {printf("%.2f%%\n", $3/$2 * 100)}')
 
 if [ $battery_status = "discharging" ];
 then
-    battery_pluggedin='🔋'
+    battery_pluggedin='󰁹'
 else
-    battery_pluggedin='⚡'
+    battery_pluggedin='󰂄'
 fi
 
 if ! [ $network ]
 then
-   network_active="⛔"
+   network_active="󰖪"
 else
-   network_active="🌍"
+   network_active=""
 fi
 
 # $audio_active
-echo "Arch | ⌨ $language | $network_active $interface_easyname ($ping ms) | 🔗 $mem_used | $battery_pluggedin $battery_charge | $date_and_week ⌚ $current_time"
+echo "   |   ⌨ $language  |  $network_active $interface_easyname ($ping ms)  |  󰍛  $mem_used  |  $battery_pluggedin $battery_charge  |   $date_and_week   $current_time"
